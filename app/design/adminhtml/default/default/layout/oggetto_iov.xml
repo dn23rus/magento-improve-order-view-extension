@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Oggetto Web extension for Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade
+ * the Oggetto ImproveOrderView module to newer versions in the future.
+ * If you wish to customize the Oggetto ImproveOrderView module for your needs
+ * please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category   Oggetto
+ * @package    Oggetto_ImproveOrderView
+ * @copyright  Copyright (C) 2013 Oggetto Web (http://oggettoweb.com)
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<layout version="0.1.0">
+    <adminhtml_sales_order_index>
+        <update handle="oggett_iov_update_adminhtml_sales_order_index"/>
+        <update handle="oggetto_iov_add_preview_column" />
+    </adminhtml_sales_order_index>
+    <oggett_iov_update_adminhtml_sales_order_index>
+        <reference name="head">
+            <action method="addItem"><type>js_css</type><name>prototype/windows/themes/default.css</name></action>
+            <action method="addCss"><name>lib/prototype/windows/themes/magento.css</name></action>
+            <action method="addItem"><type>js</type><name>oggetto/adminhtml/order-preview-popup.js</name></action>
+        </reference>
+    </oggett_iov_update_adminhtml_sales_order_index>
+
+    <adminhtml_sales_order_grid>
+        <update handle="oggetto_iov_add_preview_column" />
+    </adminhtml_sales_order_grid>
+    <oggetto_iov_add_preview_column>
+        <reference name="sales_order.grid">
+            <action method="addColumnAfter" ifconfig="sales/order_view/grid_view_type">
+                <columnId>items_preview</columnId>
+                <arguments module="oggetto_iov" translate="header">
+                    <header>Preview items</header>
+                    <renderer>oggetto_iov/adminhtml_widget_grid_column_renderer_preview</renderer>
+                </arguments>
+                <after>shipping_name</after>
+            </action>
+        </reference>
+    </oggetto_iov_add_preview_column>
+
+    <adminhtml_improveorderview_index>
+        <reference name="root">
+            <action method="setTemplate"><template>empty.phtml</template></action>
+        </reference>
+        <reference name="content">
+            <block type="oggetto_iov/adminhtml_sales_order_preview_popup" template="oggetto/sales/order/view/items/info.phtml" name="infoasd">
+                <block type="adminhtml/sales_order_view_items" name="order_items_preview_popup" as="order_items_preview_popup" template="sales/order/view/items.phtml">
+                    <action method="addItemRender">
+                        <type>default</type>
+                        <block>adminhtml/sales_order_view_items_renderer_default</block>
+                        <template>sales/order/view/items/renderer/default.phtml</template>
+                    </action>
+                    <action method="addColumnRender">
+                        <column>qty</column>
+                        <block>adminhtml/sales_items_column_qty</block>
+                        <template>sales/items/column/qty.phtml</template>
+                    </action>
+                    <action method="addColumnRender">
+                        <column>name</column>
+                        <block>adminhtml/sales_items_column_name</block>
+                        <template>oggetto/sales/items/column/name.phtml</template>
+                    </action>
+                    <action method="addColumnRender">
+                        <column>name</column>
+                        <block>adminhtml/sales_items_column_name_grouped</block>
+                        <template>oggetto/sales/items/column/name.phtml</template>
+                        <type>grouped</type>
+                    </action>
+                    <block type="core/text_list" name="order_item_extra_info" />
+                </block>
+            </block>
+        </reference>
+    </adminhtml_improveorderview_index>
+
+    <adminhtml_sales_order_view>
+        <update handle="oggetto_iov_add_images_to_order_view_items_grid" />
+    </adminhtml_sales_order_view>
+
+    <oggetto_iov_add_images_to_order_view_items_grid>
+        <reference name="order_items">
+            <action method="addColumnRender">
+                <column>name</column>
+                <block>adminhtml/sales_items_column_name</block>
+                <template>oggetto/sales/items/column/name.phtml</template>
+            </action>
+            <action method="addColumnRender">
+                <column>name</column>
+                <block>adminhtml/sales_items_column_name_grouped</block>
+                <template>oggetto/sales/items/column/name.phtml</template>
+                <type>grouped</type>
+            </action>
+            <block type="core/text_list" name="order_item_extra_info" />
+        </reference>
+    </oggetto_iov_add_images_to_order_view_items_grid>
+
+</layout>

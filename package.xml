@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+    <name>Oggetto_ImproveOrderView</name>
+    <version>1.0.0</version>
+    <stability>stable</stability>
+    <license uri="http://opensource.org/licenses/osl-3.0.php">OSL v3.0</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Improve order view</summary>
+    <description>Improve order view</description>
+    <notes>First release</notes>
+    <authors><author><name>Dmitry Buryak</name><user>boss23rus</user><email>b.dmitry@oggettoweb.com</email></author></authors>
+    <date>2013-06-13</date>
+    <time>10:41:46</time>
+    <contents><target name="magelocal"><dir name="Oggetto"><dir name="ImproveOrderView"><dir name="Block"><dir name="Adminhtml"><dir name="Sales"><dir name="Order"><dir name="Preview"><file name="Grid.php" hash="3a5afb5f822be9163d2d1ab869956c18"/><file name="Popup.php" hash="059a2c99f7ecf98dd3d8eec951235c06"/></dir></dir></dir><dir name="Widget"><dir name="Grid"><dir name="Column"><dir name="Renderer"><file name="Preview.php" hash="c293a9b49ea6daff5c901032555a2eb4"/></dir></dir></dir></dir></dir></dir><dir name="Helper"><file name="Data.php" hash="f3fc018150ca39368074aa8c27016ac2"/></dir><dir name="Model"><dir name="System"><dir name="Config"><dir name="Source"><file name="ViewType.php" hash="f01a7b9711cc4695e412af2f4e0f3105"/></dir></dir></dir></dir><dir name="controllers"><dir name="Adminhtml"><file name="ImproveOrderViewController.php" hash="aecde4f7fa208f32c1e4a326d8dffd67"/></dir></dir><dir name="etc"><file name="adminhtml.xml" hash="1f3205e420e1e1c1d974c30df44d0ad0"/><file name="config.xml" hash="151897d8220526d957fd97f44642313d"/><file name="system.xml" hash="daaee35d3d7324793d88cfc49e8d540c"/></dir></dir></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="template"><dir name="oggetto"><dir><dir name="sales"><dir name="items"><dir name="column"><file name="name.phtml" hash="aa0c7d317e616661ec2c7c0344488e90"/></dir></dir><dir name="order"><dir name="view"><dir name="items"><file name="info.phtml" hash="8ed119abd2f3369dc026ee301c494d38"/></dir></dir></dir></dir></dir></dir></dir><dir name="layout"><file name="oggetto_iov.xml" hash="e903f4bd5ee6b8a7104ebc748f79074d"/></dir></dir></dir></dir></target><target name="mageweb"><dir name="js"><dir name="oggetto"><dir name="adminhtml"><file name="order-preview-popup.js" hash="0fc6c0f210614f975a2ebc7fecae2358"/></dir></dir></dir></target><target name="mageskin"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="images"><dir name="oggetto"><file name="preview.png" hash="981c24c4c062f4b9a9cb20a633a2ec77"/></dir></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Oggetto_ImproveOrderView.xml" hash="d1b8c9384a1fdd51d35f1b6d31774083"/></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.2.7</min><max>5.4.0</max></php><package><name>Mage_Core_Modules</name><channel>community</channel><min>1.5</min><max></max></package></required></dependencies>
+</package>

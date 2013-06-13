@@ -1,0 +1,19 @@
+{
+    "name": "oggetto/improve-order-view-extension",
+    "type": "magento-module",
+    "license": "OSL-3.0",
+    "description": "Oggetto ImproveOrderView extension for Magento",
+    "authors":[
+        {
+            "name":"Dmitry Buryak",
+            "email":"b.dmitry@oggettoweb.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.2.0",
+        "magento-hackathon/magento-composer-installer": "*"
+    },
+    "extra": {
+        "package-xml": "package.xml"
+    }
+}
